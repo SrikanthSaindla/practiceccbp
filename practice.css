@@ -1,0 +1,147 @@
+/* *{
+    margin: 0px;
+    padding: 0px;
+    font-family: Tahoma, sans-serif;
+    width: 100vw;
+        height: 100vh;
+        background-color: brown;
+}
+div{
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+     
+} */
+body{
+    margin: 5rem;
+    transform: .3s;
+    box-sizing: border-box;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    align-items: center;
+     
+}
+.btn{
+    background-color: gray;
+    border: none;
+    color: black;
+    outline: none;
+    padding: .8rem 2rem;
+    cursor: pointer;
+    position: relative;
+     
+
+}
+.pop::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border: 3px solid gray;
+    transition: top,left,right,bottom,100ms ease-in-out;
+
+}
+.pop:hover::before,
+.pop:focus::before
+{
+top: -5px;
+left: -5px;
+right: -5px;
+bottom: -5px;
+}
+.slide::before{
+content: '';
+position: absolute;
+top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color:#0Af;
+    transform: scaleX(0);
+    transition: transform 300ms ease-in-out;
+    transform-origin:left ;
+     
+
+}
+.slide{
+    transition: color 300ms ease-in-out;
+    z-index: 1;
+     
+     
+}
+.slide:hover::before,
+.slide:focus::before{
+    transform: scale(1);
+     
+     
+}
+.slide:hover,
+.slide:focus {
+color: white;
+ 
+
+}
+
+
+.circle::before{
+    content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+         z-index: -1;
+          background-color: gray;
+         border-radius: 50%;
+         transform: scale(1.5);
+         transition: transform 500ms ease-in-out;
+          
+}
+.circle{
+    z-index: 1;
+    overflow: hidden;
+    transition: color 300ms ease-in-out;
+    background-color: #0AF;
+    transition: color 300ms ease-in-out;
+}
+.circle:hover,
+.circle:focus {
+    color: white;
+     
+
+
+}
+.circle:hover::before,
+.circle:focus::before {
+    transform: scale(0);
+
+
+}
+.underline::before{
+    content: '';
+    position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background-color: #0AF;
+        transform: scaleX(0);
+}
+.underline:hover::before,
+.underline:focus::before {
+    transform: scale(1);
+     transition:transform 300ms ease-in-out ;
+
+}
